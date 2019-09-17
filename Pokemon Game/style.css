@@ -1,0 +1,55 @@
+.body{
+    background-image: url('images/background3.jpg'); 
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    margin-top: 20px;
+}
+    @font-face {
+        font-family: Zig;
+        src: url("zig/zig_____.ttf");
+}
+
+h1{
+    background-color: red;
+    font-family: Zig;
+    font-size: 60px;
+    margin: auto;
+    border: 0;
+    padding-top: 9px;
+    color: white;
+    text-align: center;
+}
+
+h2{
+    font-family: Zig;
+}
+
+.allCharacters{
+    margin-top: 55px;
+    display: flex;
+    width: 97vw;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+}
+
+.allCharacters img{
+    width: 20vw;
+    height: 56vh;
+}
+
+.choices{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    font-family: Zig;
+}
+
+ul{
+    list-style-type: none;
+}

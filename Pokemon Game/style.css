@@ -8,7 +8,8 @@
     margin: 0;
     margin-top: 20px;
 }
-    @font-face {
+
+@font-face{
         font-family: Zig;
         src: url("zig/zig_____.ttf");
 }
@@ -26,6 +27,7 @@ h1{
 
 h2{
     font-family: Zig;
+    font-size: 30px;
 }
 
 .allCharacters{
@@ -51,5 +53,17 @@ h2{
 }
 
 ul{
+    display: flex;
     list-style-type: none;
+    flex-direction: column;
 }
+
+li{
+    align-items: center;
+    background-color: yellow;
+    margin: 10px;
+    width: 20vw;
+    font-size: 25px; 
+    padding-left: 20px;
+}
+

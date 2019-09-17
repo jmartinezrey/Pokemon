@@ -12,6 +12,11 @@
 
     <h1>Pick your Pokemon!</h1>
 
+    <div class="score">
+        <h2>Player Score: <span id="player-score">0</span></h2>
+        <h2>Computer Score: <span id="computer-score">0</span></h2>
+    </div> 
+
     <div class="allCharacters">
         <img id="pikachu" src="images/pikachu.jpg" alt="pikachu">
         <img id="charmander" src="images/charmander.jpg" alt="charmander">
@@ -21,14 +26,12 @@
 
     <h1>Ready to fight?</h1>
 
-    <h2>Score</h2>
-
     <div class='choices'>
         <div class='userChoice'>
             <ul>
-                <li class='special-power'>Special Power</li>
-                <li class='element'>Element</li>
-                <li class='strength'>Strength</li>
+                <li class='userpick special-power'>Special Power</li>
+                <li class='userpick element'>Element</li>
+                <li class='userpick strength'>Strength</li>
             </ul>
         </div>
         <div class='computerChoice'>
@@ -40,6 +43,11 @@
         </div>
     </div>
 
+<script
+    src="https://code.jquery.com/jquery-3.4.1.js"
+    integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+    crossorigin="anonymous"></script>
+<script src="fight.js"></script>
 <script src="main.js"></script>
 </body>
 </html>

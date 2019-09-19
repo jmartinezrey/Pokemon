@@ -6,9 +6,16 @@ class Game { // this class controls all the commands
         this.myPickedChar 
         this.otherPickedChar
         this.pickRandomCharacter = this.pickRandomCharacter.bind(this)
+        this.myMusic
         // this.hide
         // this.gameOver
     }
+    
+    myMusic(){
+       let music = document.getElementById("music");
+        function play() {
+        myMusic.play();
+        }
 
     // to ++ points
     computerWin(){  
@@ -16,8 +23,7 @@ class Game { // this class controls all the commands
         $("#computer-score").html(this.computerScore);
         $(".win-big-container").css('display', 'block');
         if (this.computerScore === 3) {
-            this.gameOver()
-            
+            this.gameOver()           
         }
     }
 
@@ -26,8 +32,7 @@ class Game { // this class controls all the commands
         $("#player-score").html(this.playerScore);
         $(".win-big-container").css('display', 'block');
         if (this.playerScore === 3) {
-            this.gameOver()
-           
+            this.gameOver()          
         }
     }
 
@@ -38,8 +43,8 @@ class Game { // this class controls all the commands
         let fixThis = this
         for (let i = 0; i < characters.length; i++){ // I loop in all the characters and add the event listener to all of them
             characters[i].addEventListener("click", function() {
-                fixThis.pickMyCharacter(fixThis) 
-                console.log(fixThis.mypickedChar)
+                fixThis.pickMyCharacter(fixThis)               
+                 console.log(fixThis.mypickedChar)
             })
         }
     }
@@ -76,19 +81,13 @@ class Game { // this class controls all the commands
 
     gameOver(){  
        if(this.playerScore == 3 || this.computerScore == 3){
-           // Show game over
-           // start again
-           let fixThis = this
-
-         //  $('.win').html('Game over!')
-        //    $("#myDiv").css({
-        //     display: "none",
-        //     visibility: "hidden"
-        //   });
-
-            $('.win-container').html('Game over!')
-           $("#restartbtn").css('display', 'block');
-           $("#restartbtn button").click(fixThis.restart)
+           let fixThis = this;
+        $('.win-container').html('Game over!');
+        $('.win-container').css('margin-top','20px');        
+        $(".allCharacters").hide();
+        $(".choice-container").hide();
+        $("#restartbtn").css('display', 'block');
+        $("#restartbtn button").click(fixThis.restart);
        }
     }
 
@@ -98,4 +97,6 @@ class Game { // this class controls all the commands
 }
 
 let game = new Game()
+
+
 

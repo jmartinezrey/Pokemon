@@ -16,6 +16,7 @@ class Game { // this class controls all the commands
         function play() {
         myMusic.play();
         }
+    }
 
     // to ++ points
     computerWin(){  

@@ -1,22 +1,22 @@
+@font-face{
+    font-family: Zig;
+    src: url("zig/zig_____.ttf");
+}
+
 .body{
     background-image: url('images/background3.jpg'); 
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
     width: 100vw;
     height: 100vh;
     margin: 0;
     margin-top: 20px;
-}
-
-@font-face{
-        font-family: Zig;
-        src: url("zig/zig_____.ttf");
+    font-family: Zig;
 }
 
 h1{
     background-color: red;
-    font-family: Zig;
     font-size: 60px;
     margin: auto;
     border: 0;
@@ -26,14 +26,14 @@ h1{
 }
 
 h2{
-    font-family: Zig;
     font-size: 30px;
 }
 
 .allCharacters{
-    margin-top: 55px;
+    margin-top: 20px;
+    margin-left: 25px;
     display: flex;
-    width: 97vw;
+    width: 95vw;
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
@@ -41,7 +41,8 @@ h2{
 
 .allCharacters img{
     width: 20vw;
-    height: 56vh;
+    height: 42vh;
+
 }
 
 .choices{
@@ -49,7 +50,10 @@ h2{
     justify-content: space-around;
     flex-direction: row;
     align-items: center;
-    font-family: Zig;
+}
+
+.choice-container {
+    display: none;
 }
 
 ul{
@@ -65,5 +69,56 @@ li{
     width: 20vw;
     font-size: 25px; 
     padding-left: 20px;
+    border-radius: 5px;
 }
 
+li:hover{
+    background-color: aqua;
+}
+
+.score-container{
+    display: none;
+}
+
+.score{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.player-score,
+.computer-score{
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#restartbtn{
+    display: none;
+}
+
+/* .win-big-container{
+    display: none;
+} */
+
+.win-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+}
+
+.win{
+    margin-left: 29vw;
+    font-size: 50px;
+    height: 5vh;
+    width: 100vw;
+}
+
+.audio{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    width: 8vw;
+}

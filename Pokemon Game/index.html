@@ -10,39 +10,65 @@
 
 <body class='body'>
 
-    <h1>Pick your Pokemon!</h1>
+    <h1 class='title'>Pick your Pokemon!</h1>
 
-    <div class="score">
-        <h2>Player Score: <span id="player-score">0</span></h2>
-        <h2>Computer Score: <span id="computer-score">0</span></h2>
-    </div> 
+    <audio class='audio'
+        controls
+        src="/music/101-opening.mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
 
-    <div class="allCharacters">
-        <img id="pikachu" src="images/pikachu.jpg" alt="pikachu">
-        <img id="charmander" src="images/charmander.jpg" alt="charmander">
-        <img id="squirtle" src="images/squirtle2.jpg" alt="squirtle">
-        <img id="bulbasaur" src="images/bulbasaur.jpg" alt="bulbasaur">
+    <div id='allgame'>
+    <div class="score-container">
+        <div class="score">
+            <h2 class='player-score'>Player Score: <span id="player-score">0</span></h2>
+            <h2 class="computer-score">Computer Score: <span id="computer-score">0</span></h2>
+        </div> 
     </div>
 
-    <h1>Ready to fight?</h1>
 
-    <div class='choices'>
-        <div class='userChoice'>
-            <ul>
-                <li class='userpick special-power'>Special Power</li>
-                <li class='userpick element'>Element</li>
-                <li class='userpick strength'>Strength</li>
-            </ul>
+        <div class='win-big-container'>
+            <div class='win-container'>
+                <div class='win'></div> 
+            </div>
         </div>
-        <div class='computerChoice'>
-            <ul>
-                    <li class='special-power'>Special Power</li>
-                    <li class='element'>Element</li>
-                    <li class='strength'>Strength</li>
-            </ul>
+    
+        <div class="allCharacters"> 
+            <img id="pikachu" src="images/pikachu2.png" alt="pikachu">
+            <img id="bulbasaur" src="images/bulbasaur.png" alt="bulbasaur">  
+            <img id="charmander" src="images/charmandernew.png" alt="charmander">
+            <img id="squirtle" src="images/squirtle.png" alt="squirtle">
+                
         </div>
+
+        <div class="choice-container">
+            <div class='choices'>
+                <div class='userChoice'>
+                    <ul>
+                        <li class='userpick special-power'>Special Power</li>
+                        <li class='userpick element'>Element</li>
+                        <li class='userpick strength'>Strength</li>
+                    </ul>
+                </div>
+                <div class='computerChoice'>
+                    <ul>
+                        <li class='special-power'>Special Power</li>
+                        <li class='element'>Element</li>
+                        <li class='strength'>Strength</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 
+    <div id='restartbtn'>
+            <button>Restart Game</button>
+    </div>
+
+    
+    
 <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

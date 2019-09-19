@@ -10,7 +10,6 @@ $(document).ready(function(){
 })
 
 function computerChoice(){
-    debugger
     let computerChoice = Math.floor(Math.random()*3+1)
         if (computerChoice === 1){
             return "Special Power";
@@ -23,7 +22,6 @@ function computerChoice(){
         }
 }
 
-
 // Rock > scissors
 // Scissors > paper
 // Paper > rock 
@@ -33,21 +31,21 @@ function computerChoice(){
 // Strength > Special Power 
 
 function compareChoice(choice1, choice2){
-    debugger
     if(choice1==="Special Power" && choice2==="Element"|| 
     choice1==="Element" && choice2==="Strength"||
     choice1==="Strength" && choice2==="Special Power"){
         game.playerWin();
-        alert("player wins!")
+        $('.win').html('Player Wins!')
      }
      else if(choice2==="Special Power" && choice1==="Element"|| 
      choice2==="Element" && choice1==="Strength"||
      choice2==="Strength" && choice1==="Special Power"){
          game.computerWin();
-         alert("computer wins!")
+         $('.win').html('Computer Wins!')
      }
      else{
-         alert("You are both great!")
+         $('.win').html('You are both great!')
      }
  };
+
 

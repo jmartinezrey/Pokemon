@@ -1,27 +1,34 @@
 class Game { // this class controls all the commands
     constructor(){
-        // this.pikachu = new Pikachu()
-        // this.charmander = new Charmander()
-        // this.squirtle = new Squirtle()
-        // this.bulbasaur = new Bulbasaur()
         this.playerScore = 0
         this.computerScore = 0
         this.start()
         this.myPickedChar 
         this.otherPickedChar
         this.pickRandomCharacter = this.pickRandomCharacter.bind(this)
-        this.hide
+        // this.hide
+        // this.gameOver
     }
 
     // to ++ points
-    computerWin(){
+    computerWin(){  
         this.computerScore++;
         $("#computer-score").html(this.computerScore);
+        $(".win-big-container").css('display', 'block');
+        if (this.computerScore === 3) {
+            this.gameOver()
+            
+        }
     }
 
-    playerWin(){
+    playerWin(){   
         this.playerScore++;
         $("#player-score").html(this.playerScore);
+        $(".win-big-container").css('display', 'block');
+        if (this.playerScore === 3) {
+            this.gameOver()
+           
+        }
     }
 
     // pick a character
@@ -38,14 +45,12 @@ class Game { // this class controls all the commands
     }
 
     pickMyCharacter(fixThis) { 
-        debugger
         //"this" equals the clicked element inside an event listener
         fixThis.myPickedChar = event.currentTarget
-        setTimeout(this.pickRandomCharacter, 1000) // another character gets picked after 2 sec
+        setTimeout(this.pickRandomCharacter, 500) // another character gets picked after 0.5 sec
     }
 
     pickRandomCharacter(){
-        debugger
         let charactersDiv = document.getElementsByClassName("allCharacters")[0];
         let characters = charactersDiv.getElementsByTagName('img');
         let randomIndex = Math.floor(Math.random() * characters.length); // I get a random number and * the number of elements in my array (4)
@@ -54,6 +59,7 @@ class Game { // this class controls all the commands
             this.pickRandomCharacter();
         }
         this.hide();
+        $(".title").html('Ready to fight?');
     }
 
     hide(){
@@ -62,8 +68,32 @@ class Game { // this class controls all the commands
         for (let i = 0; i < characters.length; i++){
             if (characters[i] != this.myPickedChar && characters[i] != this.otherPickedChar){
                 characters[i].style.display = 'none';
-            }
+                $(".choice-container").css('display', 'block');
+                $(".score-container").css('display', 'block');
+            }           
     }
+    }
+
+    gameOver(){  
+       if(this.playerScore == 3 || this.computerScore == 3){
+           // Show game over
+           // start again
+           let fixThis = this
+
+         //  $('.win').html('Game over!')
+        //    $("#myDiv").css({
+        //     display: "none",
+        //     visibility: "hidden"
+        //   });
+
+            $('.win-container').html('Game over!')
+           $("#restartbtn").css('display', 'block');
+           $("#restartbtn button").click(fixThis.restart)
+       }
+    }
+
+    restart(){
+        location.reload()
     }
 }
 

@@ -10,13 +10,6 @@ class Game { // this class controls all the commands
         // this.hide
         // this.gameOver
     }
-    
-    myMusic(){
-       let music = document.getElementById("music");
-        function play() {
-        myMusic.play();
-        }
-    }
 
     // to ++ points
     computerWin(){  
@@ -39,13 +32,14 @@ class Game { // this class controls all the commands
 
     // pick a character
     start(){
-        let charactersDiv = document.getElementsByClassName("allCharacters")[0];
-        let characters = charactersDiv.getElementsByTagName('img')
+        let characters = $(".pokemon");
         let fixThis = this
         for (let i = 0; i < characters.length; i++){ // I loop in all the characters and add the event listener to all of them
             characters[i].addEventListener("click", function() {
+                fixThis.soundCharacter();
                 fixThis.pickMyCharacter(fixThis)               
-                 console.log(fixThis.mypickedChar)
+                console.log(fixThis.mypickedChar)
+                 
             })
         }
     }
@@ -57,8 +51,7 @@ class Game { // this class controls all the commands
     }
 
     pickRandomCharacter(){
-        let charactersDiv = document.getElementsByClassName("allCharacters")[0];
-        let characters = charactersDiv.getElementsByTagName('img');
+        let characters = $(".pokemon");
         let randomIndex = Math.floor(Math.random() * characters.length); // I get a random number and * the number of elements in my array (4)
         this.otherPickedChar = characters[randomIndex]
         if(this.otherPickedChar === this.myPickedChar) { // it compares that it's not equal than the character selected first
@@ -69,8 +62,7 @@ class Game { // this class controls all the commands
     }
 
     hide(){
-        let charactersDiv = document.getElementsByClassName("allCharacters")[0];
-        let characters = charactersDiv.getElementsByTagName('img')
+        let characters = $(".pokemon");
         for (let i = 0; i < characters.length; i++){
             if (characters[i] != this.myPickedChar && characters[i] != this.otherPickedChar){
                 characters[i].style.display = 'none';
@@ -88,16 +80,28 @@ class Game { // this class controls all the commands
         $(".allCharacters").hide();
         $(".choice-container").hide();
         $("#restartbtn").css('display', 'block');
-        $("#restartbtn button").click(fixThis.restart);
+        $("#restartbtn button").click(fixThis.restart);  
        }
     }
 
     restart(){
+       
         location.reload()
+        
     }
 }
 
 let game = new Game()
 
+
+    // soundCharacter(){
+    //     let soundCharacterClick = $("#gameover").get(0)
+    //     soundCharacterClick.play();
+    // } 
+
+    // soundRestart(){
+    //     let soundRestartClick = $("#restart-sound").get(0)
+    //     soundRestartClick.play();
+    // } 
 
 

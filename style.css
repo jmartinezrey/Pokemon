@@ -4,7 +4,7 @@
 }
 
 .body{
-    background-image: url('images/background3.jpg'); 
+    background-image: url('Images/background3.jpg'); 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,6 +29,7 @@ h2{
     font-size: 30px;
 }
 
+
 .allCharacters{
     margin-top: 20px;
     margin-left: 25px;
@@ -36,13 +37,19 @@ h2{
     width: 95vw;
     justify-content: space-around;
     flex-direction: row;
-    align-items: center;
-}
+    align-items: center; 
+} 
 
-.allCharacters img{
+.pokemon{
     width: 20vw;
     height: 42vh;
+    cursor: pointer;
+    transition: width 0.3s, height 0.3s;
+}
 
+.pokemon:hover{
+    width: 23vw;
+    height: 45vh;
 }
 
 .choices{
@@ -122,9 +129,10 @@ li:hover{
     width: 100vw;
 }
 
-#music{
-    margin-top: 10px;
-    margin-bottom: 10px;
+#intro{
+    margin-top: 5px;
+    margin-bottom: 5px;
     margin-left: 20px;
-    width: 15vw;
+    width: 12vw;
+    height: 2vw;
 }

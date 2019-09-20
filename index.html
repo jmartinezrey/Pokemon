@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <meta name="viewport" initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>Pokemon Game</title>
@@ -10,11 +10,26 @@
 
 <body class='body'>
 
+    <audio controls id='intro'>
+        <source src="music/103-professor oak.mp3" type='audio/mp3'> Audio not supported      
+    </audio>
+
+    <!--
+    <audio id='gameover'>
+        <source src="music/400579__alanmcki__retro-arcade-video-game-positive-tone.mp3" type='audio/mp3'> Audio not supported      
+    </audio>
+
+    <audio id='restart-sound'>
+            <source src="music/restart-sound.mp3" type='audio/mp3'> Audio not supported      
+    </audio>
+    -->
+
     <h1 class='title'>Pick your Pokemon!</h1>
 
-    <audio controls id='music'>
-        <source src="music/101-opening.mp3" type='audio/mp3'> Audio not supported      
-    </audio>
+    
+    <audio id='gameover'>
+        <source src="music/414209__jacksonacademyashmore__death.mp3" type='audio/mp3'> Audio not supported      
+        </audio>
 
     <div id='allgame'>
     <div class="score-container">
@@ -24,20 +39,20 @@
         </div> 
     </div>
 
-
         <div class='win-big-container'>
             <div class='win-container'>
                 <div class='win'></div> 
             </div>
         </div>
     
+        
         <div class="allCharacters"> 
-            <img id="pikachu" src="images/pikachu2.png" alt="pikachu">
-            <img id="bulbasaur" src="images/bulbasaur.png" alt="bulbasaur">  
-            <img id="charmander" src="images/charmandernew.png" alt="charmander">
-            <img id="squirtle" src="images/squirtle.png" alt="squirtle">
+            <img class="pokemon" src="Images/pikachu2.png" alt="pikachu">
+            <img class="pokemon" src="Images/bulbasaur.png" alt="bulbasaur">  
+            <img class="pokemon" src="Images/charmandernew.png" alt="charmander">
+            <img class="pokemon" src="Images/squirtle.png" alt="squirtle">
                 
-        </div>
+        </div> 
 
         <div class="choice-container">
             <div class='choices'>
@@ -63,9 +78,7 @@
     <div id='restartbtn'>
             <button class='restart-button'>Restart Game</button>
     </div>
-
-    
-    
+  
 <script
     src="https://code.jquery.com/jquery-3.4.1.js"
     integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

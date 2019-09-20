@@ -36,7 +36,7 @@ class Game { // this class controls all the commands
         let fixThis = this
         for (let i = 0; i < characters.length; i++){ // I loop in all the characters and add the event listener to all of them
             characters[i].addEventListener("click", function() {
-                fixThis.soundCharacter();
+                
                 fixThis.pickMyCharacter(fixThis)               
                 console.log(fixThis.mypickedChar)
                  
